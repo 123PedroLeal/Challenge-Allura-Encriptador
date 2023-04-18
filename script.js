@@ -5,7 +5,7 @@ const botonDesencriptar = document.getElementById("boton-desencriptado");
 // Función para encriptar.
 botonEncriptado.addEventListener("click",function encriptacion()
 {
-    const textoPorEncriptar = document.getElementById("textoporencriptar");
+    const textoPorEncriptar = document.getElementById("textoportrabajar");
     const textoSinEncriptar = textoPorEncriptar.value;
     
     // Proceso para encriptar.
@@ -20,7 +20,9 @@ botonEncriptado.addEventListener("click",function encriptacion()
 
     document.querySelector('.respuesta p').innerHTML = "";
     document.querySelector('.respuesta p').innerHTML = textoFinal;
-    document.querySelector('.copiar').style.display = "inline-block";
+    document.querySelector('.respuesta p').style.color = "#FFFFFF";
+    document.querySelector('.respuesta p').style.fontWeight = "bold";
+    document.querySelector('.copiar').style.display = "flex";
     document.querySelector('.bloque-respuesta').style.justifyContent = "space-between";
     document.querySelector('.bloque-respuesta p').style.margin = "4rem 3rem";
     document.querySelector('.bloque-respuesta .copiar').style.marginBottom = "2rem";
@@ -49,3 +51,19 @@ botonCopiar.addEventListener("click",function copiar()
     document.body.removeChild(textareaTemporal);
 })
 
+botonDesencriptar.addEventListener("click",function desencriptar()
+{
+    const textoPorDesencriptar = document.getElementById("textoportrabajar");
+    const textoSinDesencriptar = textoPorDesencriptar.value;
+
+    // Proceso para encriptar.
+    const textoSinEnter = textoSinDesencriptar.replaceAll('enter', 'e');
+    const textoSinImes = textoSinEnter.replaceAll('imes', 'i');
+    const textoSinAi = textoSinImes.replaceAll('ai', 'a');
+    const textoSinOber = textoSinAi.replaceAll('ober', 'o');
+    const textoFinal = textoSinOber.replaceAll('ufat', 'u');
+
+    document.querySelector('.respuesta p').innerHTML = "";
+    document.querySelector('.respuesta p').innerHTML = textoFinal;
+
+})
