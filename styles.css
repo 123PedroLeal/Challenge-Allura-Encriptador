@@ -1,0 +1,369 @@
+:root
+{
+    --color--bloque-encriptado: #F3F5FC;
+    --color--bloque-desencriptado: #AAb2d5;
+    --color--negro-general: rgb(25, 25, 25);
+    --color--blanco-general: #FFFFFF;
+    --color--header-footer: #757FB2;
+    --color--azul-allura: #0A3871;
+
+    --logo-font: 'Leckerli One', cursive;
+    --headings-font: 'Playfair Display', serif;
+    --paragraphs-font: 'Lato', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* Instruciones generales */
+
+h1,h2,h3,h4,h5,h6
+{
+    font-family: var(--headings-font);
+}
+
+h1
+{
+    font-size: 5rem;
+}
+
+h2
+{
+    font-size: 3rem;
+}
+
+h3
+{
+    font-size: 2.3rem;
+}
+
+p
+{
+    font-size: 1.8rem;
+    font-family: var(--paragraphs-font);
+}
+
+a
+{
+    text-decoration: none;
+}
+
+/* Header */
+
+header
+{
+    height: 13rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6rem;
+    background-color: var(--color--header-footer);
+    border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.Logo-Allura svg
+{
+    height: 9rem;
+    width: 6rem;
+    fill: var(--color--negro-general);
+}
+
+.Logo-Allura svg:hover
+{
+    transform: scale(1.1);
+    fill: var(--color--azul-allura)
+}
+
+.Logo-Personal 
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    font-family: var(--logo-font);
+    color: var(--color--negro-general);
+}
+
+.Logo-Personal img
+{
+    height: 9rem;
+    width: 9rem;
+}
+
+.Logo-Personal:hover
+{
+    transform: scale(1.1);
+}
+
+/* Encriptadores */
+
+.principal
+{
+    margin: 2rem 0rem;
+    height: auto;
+    width: 100%;
+    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ingreso
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 55%;
+    height: auto;
+}
+
+.bloque-entrada 
+{
+    height: 70rem;
+    width: 100%;
+    padding: 4rem 3rem;
+    background-color: var(--color--bloque-encriptado);
+    font-size: 2rem;
+    font-family: var(--paragraphs-font);
+    color: var(--color--azul-allura);
+    font-weight: bold;
+    resize: none;
+    border-radius: 10rem;
+    border: 0.1rem solid var(--color--negro-general);
+}
+
+.botones
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.boton
+{
+    width: 35%;
+    height: 6.5rem;
+    border-radius: 5rem;
+    border: solid 0.1rem var(--color--negro-general);
+    font-size: 2rem;
+    font-family: var(--paragraphs-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.encriptar
+{
+    background-color: var(--color--bloque-encriptado);
+}
+
+.bloque-respuesta
+{
+    width: 35%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--color--bloque-desencriptado);
+    border-radius: 5rem;
+    border: 0.1rem solid var(--color--negro-general);
+}
+
+.bloque-respuesta figure
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.bloque-respuesta img
+{
+    height: 27rem;
+    width: 30rem;
+}
+
+.copiar, .desencriptar
+{
+    background-color: var(--color--bloque-desencriptado);
+}
+
+.copiar
+{
+    display: none;
+}
+
+.encriptar svg, .desencriptar svg, .copiar svg
+{
+    height: 3rem;
+    width: 3rem;
+}
+
+.encriptar:hover, .desencriptar:hover, .copiar:hover
+{
+    transition: 0.5s;
+    border: 0.32rem solid;
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.encriptar:hover
+{
+    color: var(--color--bloque-desencriptado);
+    fill: var(--color--bloque-desencriptado);
+}
+
+.copiar:hover, .desencriptar:hover
+{  
+    color: var(--color--bloque-encriptado);
+    fill: var(--color--bloque-encriptado);
+}
+
+/* Footer */
+
+footer
+{
+    background-color: var(--color--header-footer);
+    height: 13rem;
+    width: 100%;
+    font-family: var(--headings-font);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem 1.5rem 0 0;
+    color: var(--color--negro-general);
+    font-weight: bold;
+}
+
+.message
+{
+    padding-right: 2rem;
+}
+
+.message svg
+{
+    height: 3rem;
+    width: 3rem;
+    fill: var(--color--negro-general);
+}
+
+.social-media
+{
+    padding: 1rem 2rem;
+    border-left: 0.1rem solid var(--color--negro-general);
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+}
+
+.social-media svg
+{
+    height: 5rem;
+    width: 5rem;
+    fill: var(--color--negro-general);
+}
+
+.social-media svg:hover 
+{
+    transition: 0.5s;
+    transform: scale(1.2);
+    fill: var(--color--blanco-general);
+}
+
+@media(max-width: 850px)
+{
+    .principal
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .ingreso
+    {
+        width: 90%;
+    }
+    .bloque-respuesta
+    {
+        width: 90%;
+    }
+
+    .bloque-respuesta figure
+    {
+        padding: 2rem 0rem;
+    }
+
+    .bloque-respuesta img
+    {
+        display: none;
+    }
+
+    footer
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        width: 100%;
+    }
+
+    .message
+    {
+        padding: 1rem 2rem;
+    }
+
+    .social-media
+    {
+        border-left: none;
+    }
+}
+
+@media(max-width: 560px)
+{
+    .Logo-Personal h1
+    {
+        display: none;
+    }
+
+    .botones
+    {
+        gap: 2rem;
+    }
+
+    .boton
+    {
+        width:50%;
+    }
+}
+
+@media(max-width: 425px)
+{
+    header
+    {
+        justify-content: center;
+    }
+    figure .Logo-Personal
+    {
+        display: none;
+    }
+    .botones
+    {
+        gap: 1rem;
+    }
+}
+
