@@ -180,20 +180,19 @@ header
     border: 0.1rem solid var(--color--negro-general);
 }
 
-.bloque-respuesta figure
+.bloque-respuesta img
+{
+    height: 27rem;
+    width: 30rem;
+}
+
+.respuesta
 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 1rem;
-}
-
-.bloque-respuesta img
-{
-    height: 27rem;
-    width: 30rem;
 }
 
 .copiar, .desencriptar
