@@ -190,18 +190,20 @@ header
 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
 }
 
-.copiar, .desencriptar
+.desencriptar
 {
     background-color: var(--color--bloque-desencriptado);
 }
 
+
 .copiar
 {
+    background-color: #757FB2;
     display: none;
 }
 
@@ -299,14 +301,10 @@ footer
     .bloque-respuesta
     {
         width: 90%;
+        padding: 2rem 1rem;
     }
 
-    .bloque-respuesta figure
-    {
-        padding: 2rem 0rem;
-    }
-
-    .bloque-respuesta img
+    .bloque-respuesta img , .bloque-respuesta figure
     {
         display: none;
     }

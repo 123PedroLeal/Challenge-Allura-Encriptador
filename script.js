@@ -15,18 +15,54 @@ botonEncriptado.addEventListener("click",function encriptacion()
     const textoConOber = textoConAi.replaceAll('o', 'ober');
     const textoFinal = textoConOber.replaceAll('u', 'ufat');
 
-    document.querySelector(".respuesta figure").remove();
-    document.querySelector(".respuesta h3").remove();
-
-    document.querySelector('.respuesta p').innerHTML = "";
-    document.querySelector('.respuesta p').innerHTML = textoFinal;
-    document.querySelector('.respuesta p').style.color = "#FFFFFF";
-    document.querySelector('.respuesta p').style.fontWeight = "bold";
-    document.querySelector('.copiar').style.display = "flex";
-    document.querySelector('.bloque-respuesta').style.justifyContent = "space-between";
-    document.querySelector('.bloque-respuesta p').style.margin = "4rem 3rem";
-    document.querySelector('.bloque-respuesta .copiar').style.marginBottom = "2rem";
+    colocarTexto(textoFinal);
 })
+
+// Función para desencriptar.
+botonDesencriptar.addEventListener("click",function desencriptar()
+{
+    const textoPorDesencriptar = document.getElementById("textoportrabajar");
+    const textoSinDesencriptar = textoPorDesencriptar.value;
+
+    // Proceso para desencriptar.
+    const textoSinEnter = textoSinDesencriptar.replaceAll('enter', 'e');
+    const textoSinImes = textoSinEnter.replaceAll('imes', 'i');
+    const textoSinAi = textoSinImes.replaceAll('ai', 'a');
+    const textoSinOber = textoSinAi.replaceAll('ober', 'o');
+    const textoFinal = textoSinOber.replaceAll('ufat', 'u');
+
+    colocarTexto(textoFinal);
+})
+
+// funcion para colocar el texto
+function colocarTexto (texto)
+{
+    if(document.querySelector(".respuesta figure") !== null && document.querySelector(".respuesta h3") !== null)
+    {
+        document.querySelector(".respuesta figure").remove();
+        document.querySelector(".respuesta h3").remove();
+        
+        document.querySelector('.respuesta p').innerHTML = "";
+        document.querySelector('.respuesta p').innerHTML = texto;
+        document.querySelector('.respuesta p').style.color = "#FFFFFF";
+        document.querySelector('.respuesta p').style.fontWeight = "bold";
+        document.querySelector('.copiar').style.display = "flex";
+        document.querySelector('.bloque-respuesta').style.justifyContent = "space-between";
+        document.querySelector('.bloque-respuesta p').style.margin = "4rem 3rem";
+        document.querySelector('.bloque-respuesta .copiar').style.marginBottom = "2rem";
+    }
+    else
+    {
+        document.querySelector('.respuesta p').innerHTML = "";
+        document.querySelector('.respuesta p').innerHTML = texto;
+        document.querySelector('.respuesta p').style.color = "#FFFFFF";
+        document.querySelector('.respuesta p').style.fontWeight = "bold";
+        document.querySelector('.copiar').style.display = "flex";
+        document.querySelector('.bloque-respuesta').style.justifyContent = "space-between";
+        document.querySelector('.bloque-respuesta p').style.margin = "4rem 3rem";
+        document.querySelector('.bloque-respuesta .copiar').style.marginBottom = "2rem";
+    }
+}
 
 // Funcion para copiar.
 botonCopiar.addEventListener("click",function copiar()
@@ -51,19 +87,3 @@ botonCopiar.addEventListener("click",function copiar()
     document.body.removeChild(textareaTemporal);
 })
 
-botonDesencriptar.addEventListener("click",function desencriptar()
-{
-    const textoPorDesencriptar = document.getElementById("textoportrabajar");
-    const textoSinDesencriptar = textoPorDesencriptar.value;
-
-    // Proceso para encriptar.
-    const textoSinEnter = textoSinDesencriptar.replaceAll('enter', 'e');
-    const textoSinImes = textoSinEnter.replaceAll('imes', 'i');
-    const textoSinAi = textoSinImes.replaceAll('ai', 'a');
-    const textoSinOber = textoSinAi.replaceAll('ober', 'o');
-    const textoFinal = textoSinOber.replaceAll('ufat', 'u');
-
-    document.querySelector('.respuesta p').innerHTML = "";
-    document.querySelector('.respuesta p').innerHTML = textoFinal;
-
-})
