@@ -80,7 +80,7 @@ textoDeEntrada.addEventListener("keydown",function(evento)
         alert("No se permiten letras mayúsculas en este campo.");
     }
     // Restriccion de caracteres especiales
-    else if(/^[0-9{}ñ´+.,:;?!¡¡\-\s'[\]=/]+$/.test(char))
+    else if(/^[0-9{}ñ´+.,:;?!¡¡\-'[\]=/]+$/.test(char))
     {
         // Detiene la acción predeterminada de la tecla presionada
         evento.preventDefault(); 
