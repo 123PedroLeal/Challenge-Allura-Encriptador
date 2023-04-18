@@ -202,6 +202,12 @@ header
     text-align: center;
 }
 
+.respuesta p
+{
+    max-width: 35rem;
+    overflow-wrap: break-word;;
+}
+
 .copiar
 {
     background-color: #757FB2;
@@ -316,8 +322,7 @@ footer
         justify-content: center;
         align-items: center;
         text-align: center;
-        height: auto;
-        width: 100%;
+        padding: 6rem 0rem;
     }
 
     .message
@@ -327,6 +332,7 @@ footer
 
     .social-media
     {
+        border-top: 0.1rem solid var(--color--negro-general);;
         border-left: none;
     }
 }
@@ -359,6 +365,12 @@ footer
     .botones
     {
         gap: 1rem;
+    }
+
+    .respuesta p
+    {
+        max-width: 25rem;
+        overflow-wrap: break-word;;
     }
 }
 
