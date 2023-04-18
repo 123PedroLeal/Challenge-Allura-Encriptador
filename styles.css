@@ -166,6 +166,11 @@ header
     background-color: var(--color--bloque-encriptado);
 }
 
+.desencriptar
+{
+    background-color: var(--color--bloque-desencriptado);
+}
+
 .bloque-respuesta
 {
     width: 35%;
@@ -174,10 +179,12 @@ header
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     background-color: var(--color--bloque-desencriptado);
     border-radius: 5rem;
     border: 0.1rem solid var(--color--negro-general);
+    box-shadow: 0.2rem 0.5rem 3.2rem -0.8rem rgba(0, 0, 0, 0.22), 
+                -0.2rem -0.5rem 3.2rem -0.8rem rgba(0, 0, 0, 0.22);
 }
 
 .bloque-respuesta img
@@ -190,16 +197,10 @@ header
 {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     text-align: center;
 }
-
-.desencriptar
-{
-    background-color: var(--color--bloque-desencriptado);
-}
-
 
 .copiar
 {

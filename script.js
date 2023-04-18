@@ -1,12 +1,13 @@
 const botonEncriptado = document.getElementById("boton-encriptado");
 const botonCopiar = document.getElementById("boton-copiar");
 const botonDesencriptar = document.getElementById("boton-desencriptado");
+const textoDeEntrada = document.getElementById("textoportrabajar");
 
 // Función para encriptar.
 botonEncriptado.addEventListener("click",function encriptacion()
 {
-    const textoPorEncriptar = document.getElementById("textoportrabajar");
-    const textoSinEncriptar = textoPorEncriptar.value;
+    // constante que recibe el texto sin encriptar ingresado por el usuario.
+    const textoSinEncriptar = textoDeEntrada.value;
     
     // Proceso para encriptar.
     const textoConEnter = textoSinEncriptar.replaceAll('e', 'enter');
@@ -21,8 +22,8 @@ botonEncriptado.addEventListener("click",function encriptacion()
 // Función para desencriptar.
 botonDesencriptar.addEventListener("click",function desencriptar()
 {
-    const textoPorDesencriptar = document.getElementById("textoportrabajar");
-    const textoSinDesencriptar = textoPorDesencriptar.value;
+    // constante que recibe el texto encriptado ingresado por el usuario.
+    const textoSinDesencriptar = textoDeEntrada.value;
 
     // Proceso para desencriptar.
     const textoSinEnter = textoSinDesencriptar.replaceAll('enter', 'e');
@@ -63,6 +64,30 @@ function colocarTexto (texto)
         document.querySelector('.bloque-respuesta .copiar').style.marginBottom = "2rem";
     }
 }
+
+// Restriccion para las mayusculas, caracteres especiales o números.
+textoDeEntrada.addEventListener("keydown",function(evento)
+{
+    const char = evento.key;
+    // Verifica si se ingresó una letra mayúscula, que no incluya la tecla ctrl,el keycode 8 para que el usuario 
+    // pueda borrar lo que escribio, las feclas para poder cambiar el caracter y la tecla enter.
+    if (/[A-Z]/.test(char) && !evento.ctrlKey && evento.keyCode !== 8 && evento.key !== 'ArrowUp' && evento.key !== 'ArrowDown' 
+        && evento.key !== 'ArrowLeft' && evento.key !== 'ArrowRight' && evento.key !== 'Enter') 
+    { 
+        // Detiene la acción predeterminada de la tecla presionada
+        evento.preventDefault(); 
+        // Genera una alerta para que el usuario no ingrese las mayusculas.
+        alert("No se permiten letras mayúsculas en este campo.");
+    }
+    // Restriccion de caracteres especiales
+    else if(/^[0-9{}ñ´+.,:;?!¡¡\-\s'[\]=/]+$/.test(char))
+    {
+        // Detiene la acción predeterminada de la tecla presionada
+        evento.preventDefault(); 
+        // Genera una alerta para que el usuario no ingrese caracteres especiales o números.
+        alert("No se permiten caracteres especiales o números en este campo.");
+    }
+})
 
 // Funcion para copiar.
 botonCopiar.addEventListener("click",function copiar()
