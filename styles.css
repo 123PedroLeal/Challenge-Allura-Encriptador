@@ -357,9 +357,15 @@ footer
 
 @media(max-width: 450px)
 {  
+    header
+    {
+        padding: 2rem 2rem;
+        justify-content: space-between;
+    }
+
     .Logo-Personal h1
     {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     .botones
